@@ -14,6 +14,7 @@ public class PremiumAccount implements IAccount {
 
     @Override
     public double withdraw(double amount) {
+        // The withdrawal is only limited by the current balance, no credit limit
         double amountToWithdraw = Math.min(amount, balance);
         balance -= amountToWithdraw;
         return amountToWithdraw;
