@@ -5,7 +5,8 @@ public class BasicAccount implements IAccount {
 
     public BasicAccount(int accountNumber, double withdrawalLimit) {
         this.accountNumber = accountNumber;
-        this.withdrawalLimit = withdrawalLimit;
+        // Set the withdrawal limit to the provided value if it's positive, otherwise set it to zero
+        this.withdrawalLimit = withdrawalLimit > 0 ? withdrawalLimit : 0;
         this.balance = 0; // assuming the initial balance is zero
     }
 
@@ -31,4 +32,6 @@ public class BasicAccount implements IAccount {
         return accountNumber;
     }
 }
+
+
 
